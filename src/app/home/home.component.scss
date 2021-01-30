@@ -1,14 +1,16 @@
 .container {
   text-align: center;
   padding: 1em;
-}
+  .radio-group-size {
+    display: inherit;
+    margin: 15px 0;
+  }
 
-.logo {
-  width: 150px;
-  margin: 0 auto;
-}
-
-q {
-  font-style: italic;
-  quotes: "« " " »";
+  .example-radio-button {
+    margin: 5px;
+  }
+  .radio-label {
+    display: inherit;
+    font-weight: bold;
+  }
 }

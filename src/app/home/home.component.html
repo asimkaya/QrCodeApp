@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Enter Text</mat-label>
+        <input matInput type="text" [(ngModel)]="inputModel" />
+      </mat-form-field>
+
+      <label class="radio-label">Pick your size option</label>
+      <mat-radio-group class="radio-group-size" [(ngModel)]="radioSelect">
+        <mat-radio-button class="example-radio-button" *ngFor="let radio of radioGroupValue" [value]="radio.display">
+          {{ radio.display }}
+        </mat-radio-button>
+      </mat-radio-group>
+      <button mat-raised-button color="primary" [disabled]="!radioSelect || !inputModel" (click)="generateQrCode()">
+        Create QrCode
+      </button>
+      <div class="image-div">
+        <img [src]="imageToShow" *ngIf="!isImageLoading; else noImageFound" />
+        <ng-template #noImageFound>
+          <img src="fallbackImage.png" alt="Fallbackimage" />
+        </ng-template>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -6738,7 +6738,7 @@
           t
         );
       })();
-      const Mc = 'http://api.qrserver.com/v1/create-qr-code/',
+      const Mc = 'https://chart.googleapis.com/',
         Nc = ['de-DE', 'en-US'];
       let Vc = null;
       function jc() {
@@ -30204,7 +30204,7 @@
               this.http = t;
             }
             getQrCode(t, e) {
-              return this.http.get(Mc + '?data=' + t + '!&size=' + e, { responseType: 'blob' });
+              return this.http.get(Mc + 'chart?cht=qr&chs=' + e + '&chl=' + t, { responseType: 'blob' });
             }
           }
           return (
@@ -30285,7 +30285,7 @@
               ['noImageFound', ''],
               [1, 'example-radio-button', 3, 'value'],
               [3, 'src'],
-              ['src', 'fallbackImage.png', 'alt', 'Fallbackimage'],
+              ['src', '', 'alt', ''],
             ],
             template: function (t, e) {
               if (

@@ -13,7 +13,7 @@ import { env } from './.env';
 export const environment = {
   production: false,
   version: env.npm_package_version + '-dev',
-  serverUrl: 'http://api.qrserver.com/v1/create-qr-code/',
+  serverUrl: 'https://chart.googleapis.com/',
   defaultLanguage: 'en-US',
   supportedLanguages: ['de-DE', 'en-US'],
 };

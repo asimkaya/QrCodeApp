@@ -10,7 +10,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getQrCode(text: string, size: string): Observable<Blob> {
-    return this.http.get(environment.serverUrl + '?data=' + text + '!&size=' + size, {
+    return this.http.get(environment.serverUrl + 'chart' + '?cht=qr' + '&chs=' + size + '&chl=' + text, {
       responseType: 'blob',
     });
   }

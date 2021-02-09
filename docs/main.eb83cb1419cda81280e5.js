@@ -30955,7 +30955,7 @@
                 return new (e || t)();
               },
               providers: [],
-              imports: [[Uk.forRoot(IO)], Uk],
+              imports: [[Uk.forRoot(IO, { useHash: !0 })], Uk],
             })),
             t
           );
@@ -30968,7 +30968,7 @@
               factory: function (e) {
                 return new (e || t)();
               },
-              providers: [],
+              providers: [{ provide: Kc, useClass: Jc }],
               imports: [[Xh, bd, np, Xp.forRoot(), Ng, HC, sA, JT, SO, xO, AO, RO]],
             })),
             t

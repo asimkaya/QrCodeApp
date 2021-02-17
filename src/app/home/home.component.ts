@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { finalize } from 'rxjs/operators';
 import { ApiService } from './api.service';
 
@@ -8,6 +9,8 @@ import { ApiService } from './api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  @BlockUI() blockUI: NgBlockUI;
+
   radioSelect: any;
   inputModel: any;
   imageToShow: any;
@@ -41,11 +44,13 @@ export class HomeComponent implements OnInit {
   }
 
   generateQrCode() {
+    this.blockUI.start();
     this.isImageLoading = true;
     this.api.getQrCode(this.inputModel, this.radioSelect).subscribe(
       (data) => {
         this.createImageFromBlob(data);
         this.isImageLoading = false;
+        this.blockUI.stop();
       },
       (error) => {
         this.isImageLoading = false;
